@@ -1,0 +1,50 @@
+int fib(int a){
+	if(a<=2)return 1;
+	return fib(a-1)+fib(a-2);
+}
+int main(){
+	int c=fib(7);
+	return 0;
+}
+00000000 <fib>:
+   0:	02bf8063 	addi.w	$r3,$r3,-32(0xfe0)
+   4:	29807061 	st.w	$r1,$r3,28(0x1c)
+   8:	29806077 	st.w	$r23,$r3,24(0x18)
+   c:	29803064 	st.w	$r4,$r3,12(0xc)
+  10:	2880306d 	ld.w	$r13,$r3,12(0xc)
+  14:	0280080c 	addi.w	$r12,$r0,2(0x2)
+  18:	60000d8d 	blt	$r12,$r13,12(0xc) # 24 <.L2>
+  1c:	0280040c 	addi.w	$r12,$r0,1(0x1)
+  20:	50003000 	b	48(0x30) # 50 <.L3>
+
+00000024 <.L2>:
+  24:	2880306c 	ld.w	$r12,$r3,12(0xc)
+  28:	02bffd8c 	addi.w	$r12,$r12,-1(0xfff)
+  2c:	00150184 	move	$r4,$r12
+  30:	57ffd3ff 	bl	-48(0xfffffd0) # 0 <fib>
+  34:	00150097 	move	$r23,$r4
+  38:	2880306c 	ld.w	$r12,$r3,12(0xc)
+  3c:	02bff98c 	addi.w	$r12,$r12,-2(0xffe)
+  40:	00150184 	move	$r4,$r12
+  44:	57ffbfff 	bl	-68(0xfffffbc) # 0 <fib>
+  48:	0015008c 	move	$r12,$r4
+  4c:	001032ec 	add.w	$r12,$r23,$r12
+
+00000050 <.L3>:
+  50:	00150184 	move	$r4,$r12
+  54:	28807061 	ld.w	$r1,$r3,28(0x1c)
+  58:	28806077 	ld.w	$r23,$r3,24(0x18)
+  5c:	02808063 	addi.w	$r3,$r3,32(0x20)
+  60:	4c000020 	jirl	$r0,$r1,0
+
+00000064 <main>:
+  64:	02bf8063 	addi.w	$r3,$r3,-32(0xfe0)
+  68:	29807061 	st.w	$r1,$r3,28(0x1c)
+  6c:	02801c04 	addi.w	$r4,$r0,7(0x7)
+  70:	57ff93ff 	bl	-112(0xfffff90) # 0 <fib>
+  74:	29803064 	st.w	$r4,$r3,12(0xc)
+  78:	0015000c 	move	$r12,$r0
+  7c:	00150184 	move	$r4,$r12
+  80:	28807061 	ld.w	$r1,$r3,28(0x1c)
+  84:	02808063 	addi.w	$r3,$r3,32(0x20)
+  88:	4c000020 	jirl	$r0,$r1,0

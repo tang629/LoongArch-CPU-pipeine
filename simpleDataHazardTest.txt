@@ -1,0 +1,39 @@
+int main(){
+	int a=0;
+	a+=5;
+	int b=2;
+	b-=2;
+	int c=3;
+	c|=4;
+	int d=3;
+	d&=6;
+	return 0;
+}
+00000000 <main>:
+   0:	02bf8063 	addi.w	$r3,$r3,-32(0xfe0)
+   4:	29807076 	st.w	$r22,$r3,28(0x1c)
+   8:	02808076 	addi.w	$r22,$r3,32(0x20)
+   c:	29bfb2c0 	st.w	$r0,$r22,-20(0xfec)
+  10:	28bfb2cc 	ld.w	$r12,$r22,-20(0xfec)
+  14:	0280158c 	addi.w	$r12,$r12,5(0x5)
+  18:	29bfb2cc 	st.w	$r12,$r22,-20(0xfec)
+  1c:	0280080c 	addi.w	$r12,$r0,2(0x2)
+  20:	29bfa2cc 	st.w	$r12,$r22,-24(0xfe8)
+  24:	28bfa2cc 	ld.w	$r12,$r22,-24(0xfe8)
+  28:	02bff98c 	addi.w	$r12,$r12,-2(0xffe)
+  2c:	29bfa2cc 	st.w	$r12,$r22,-24(0xfe8)
+  30:	02800c0c 	addi.w	$r12,$r0,3(0x3)
+  34:	29bf92cc 	st.w	$r12,$r22,-28(0xfe4)
+  38:	28bf92cc 	ld.w	$r12,$r22,-28(0xfe4)
+  3c:	0380118c 	ori	$r12,$r12,0x4
+  40:	29bf92cc 	st.w	$r12,$r22,-28(0xfe4)
+  44:	02800c0c 	addi.w	$r12,$r0,3(0x3)
+  48:	29bf82cc 	st.w	$r12,$r22,-32(0xfe0)
+  4c:	28bf82cc 	ld.w	$r12,$r22,-32(0xfe0)
+  50:	0340198c 	andi	$r12,$r12,0x6
+  54:	29bf82cc 	st.w	$r12,$r22,-32(0xfe0)
+  58:	0015000c 	move	$r12,$r0
+  5c:	00150184 	move	$r4,$r12
+  60:	28807076 	ld.w	$r22,$r3,28(0x1c)
+  64:	02808063 	addi.w	$r3,$r3,32(0x20)
+  68:	4c000020 	jirl	$r0,$r1,0
