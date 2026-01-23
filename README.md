@@ -1,2 +1,2 @@
 # LoongArch-CPU-pipeine
-this is a verilog version of Lonarch CPU,it can use pipeline to process data.
+this is a verilog version of Loongarch CPU,it can use pipeline to process data.
